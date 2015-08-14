@@ -1,5 +1,6 @@
 var aDebug = [];
 var parser = new JSONParser();
+var sApiKey = '';
 
 var jsonServices = [];
 
@@ -22,7 +23,7 @@ if ( nTotal > 0 ) {
     for ( var i = 0; i <= nTotal; i += parseInt(nLimit) ) {
         rest = new RESTMessage('PagerDuty Reporting', 'get');
         rest.setStringParameter('TargetTable', 'services');
-        rest.setStringParameter('APIKey', '1z9JqKeNDywMnJGcjwxp');
+        rest.setStringParameter('APIKey', sApiKey);
         rest.setStringParameter('SubDomain', 'betfair');
         rest.setHttpTimeout(10000);
 
@@ -95,7 +96,7 @@ function getRecordTotal() {
 
     var rest = new RESTMessage('PagerDuty Reporting', 'get');
     rest.setStringParameter('TargetTable', 'services');
-    rest.setStringParameter('APIKey', '1z9JqKeNDywMnJGcjwxp');
+    rest.setStringParameter('APIKey', sApiKey);
     rest.setStringParameter('SubDomain', 'betfair');
     rest.setHttpTimeout(10000);
 
